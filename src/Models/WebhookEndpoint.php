@@ -18,6 +18,11 @@ class WebhookEndpoint extends Model
         ];
     }
 
+    public function getTable(): string
+    {
+        return config('webhooks.table_prefix', 'itmosoft_').'webhook_endpoints';
+    }
+
     public function deliveries(): HasMany
     {
         return $this->hasMany(WebhookDelivery::class, 'endpoint_id');

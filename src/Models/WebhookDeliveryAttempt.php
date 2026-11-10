@@ -9,6 +9,13 @@ class WebhookDeliveryAttempt extends Model
 {
     protected $guarded = [];
 
+    public $timestamps = false;
+
+    public function getTable(): string
+    {
+        return config('webhooks.table_prefix', 'itmosoft_').'webhook_delivery_attempts';
+    }
+
     public function delivery(): BelongsTo
     {
         return $this->belongsTo(WebhookDelivery::class, 'delivery_id');

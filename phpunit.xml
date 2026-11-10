@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/12.0/phpunit.xsd"
-         bootstrap="vendor/autoload.php" colors="true">
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/12.0/phpunit.xsd"
+    bootstrap="vendor/autoload.php" colors="true">
+    <php>
+        <env name="APP_ENV" value="testing"/>
+        <env name="APP_KEY" value="base64:dSaK1AC6oxo2dDby+y2QY91PAc7Hcom4KmGATvsED7Q="/>
+    </php>
     <testsuites>
         <testsuite name="Feature">
             <directory>tests/Feature</directory>

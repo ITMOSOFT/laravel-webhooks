@@ -18,6 +18,11 @@ class WebhookDelivery extends Model
         ];
     }
 
+    public function getTable(): string
+    {
+        return config('webhooks.table_prefix', 'itmosoft_').'webhook_deliveries';
+    }
+
     public function endpoint(): BelongsTo
     {
         return $this->belongsTo(WebhookEndpoint::class, 'endpoint_id');
